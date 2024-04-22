@@ -49,6 +49,10 @@ int main(){
 }
 
 
+
+
+
+// function the reverse functionality
 string reverse(string theFile){
     int lengthOfString = theFile.length();
     for(int i = 0; i < lengthOfString/2; i++){
@@ -57,7 +61,7 @@ string reverse(string theFile){
     return theFile;     
 }
 
-
+// function of the capitalise functionality
 string capitalizeSecondLetter(string x){
     bool capitalize = false;
     
