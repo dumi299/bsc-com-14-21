@@ -5,6 +5,7 @@
  
 using namespace std;
 string reverse(string theFile);
+string capitalizeSecondLetter(string x);
 
 int main(){
     ifstream file("example.txt"); 
@@ -16,7 +17,7 @@ int main(){
     getline(file, fileData);
     file.close();
 
-    // comment
+    // printing out the number of vowels inside the text file
     int numberOfVowels = 0;
     for(char c: fileData){
         if(tolower(c) == 'a' || tolower(c) == 'e'|| tolower(c) == 'i' || tolower(c) == 'o' || tolower(c) == 'u'){
@@ -27,7 +28,7 @@ int main(){
     cout << "The number of vowels in the text file statement is: " << numberOfVowels << endl;
 
 
-    // comment
+    // printing out number of words inside the text file
     stringstream split(fileData); 
     string word;
     int numberOfWords = 0;
@@ -36,10 +37,13 @@ int main(){
     }
     cout << "The number of words in the text file statement is: " << numberOfWords << endl;
 
-    //comment
+    //displaying a reverse statement
     string reversedStatement = reverse(fileData);
     cout << "The reversed statement of the text file is: (" << reversedStatement <<")" << endl;
     
+    // displaying a capitalized statement
+    string capitalizedData = capitalizeSecondLetter(fileData);
+    cout << "The statement of the text file with capitalized second letter of each word is : \n" << capitalizedData << endl;
     
     return 0;
 }
@@ -52,3 +56,25 @@ string reverse(string theFile){
     }
     return theFile;     
 }
+
+
+string capitalizeSecondLetter(string x){
+    bool capitalize = false;
+    
+    for(char &c : x){
+        if(isalpha(c) && !capitalize){
+            capitalize = true;
+        }
+        else if( isalpha(c) && capitalize){
+            c = toupper(c);
+            capitalize = false;
+        }
+        else if(isspace(c)){
+            capitalize = false;
+        }  
+        
+    }
+        return x;
+}
+
+
