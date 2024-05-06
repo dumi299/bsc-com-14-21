@@ -13,6 +13,22 @@ class Person{
         // overload the add operator
         float operator + (const Person& otherPerson);
 
+         // Overload the equality operator
+    bool operator == (const Person& otherPerson);
+
+    // Overload the inequality operator
+    bool operator != (const Person& otherPerson);
+
+
+
+       // Overload the less than operator
+    bool operator < (const Person& otherPerson);
+
+    // Overload the greater than operator
+    bool operator > (const Person& otherPerson);
+
+
+
     private:
         float mWeight;
         string mFirstName;
