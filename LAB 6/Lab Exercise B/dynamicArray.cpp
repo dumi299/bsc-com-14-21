@@ -24,11 +24,13 @@ int main(){
        break;
     }
 
+    // dynamically allocating memory to an array
     double** Array = new double*[rows];
         for(int i = 0; i < rows; i++){
             Array[i] = new double[cols];
         }
 
+        // inserting values in the array
         for(int i = 0; i < rows; i++){
             for(int j = 0; j < cols; j++){
                 cout << "Enter the value of the element at row "<< i + 1 << " and column " << j + 1 << ":";
@@ -36,6 +38,7 @@ int main(){
             }
         }
 
+        // printing out the array on the console
         cout << "The values of the array are:\n\n";
         for(int i = 0; i < rows; i++){
             for(int j = 0; j < cols; j++){
@@ -44,7 +47,7 @@ int main(){
             cout << endl;
         }
 
-
+        // deleting the dynamically allocated memory
         for(int i = 0; i < rows; i++){
             delete[] Array[i];
         }
